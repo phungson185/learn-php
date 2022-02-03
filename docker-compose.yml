@@ -44,13 +44,14 @@ services:
     ports:
       - "3306:3306"
     environment:
-      MYSQL_DATABASE: laravel
+      MYSQL_DATABASE: blog
       MYSQL_ROOT_PASSWORD: 20184189
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql/
       - ./mysql/my.cnf:/etc/mysql/my.cnf
+      # - ./mysql/general.log:/var/log/mysql/general.log
     networks:
       - app-network
 
